@@ -71,7 +71,7 @@ client.on('message', message =>{
         if (!message.mentions.users.size) {
             return message.reply('???');
         }
-        message.channel.send(`\:face_with_symbols_over_mouth: ${taggedUser}, you have been warned! :face_with_symbols_over_mouth:`)
+        message.channel.send(`:rage:  ${taggedUser}, you have been :warning: WARNED :warning:! :rage:`)
     }
     
     //error message
