@@ -21,6 +21,8 @@ client.on('message', message =>{
         message.channel.send('https://www.twitch.tv/catblast');
     } else if (command == 'help'){
         message.channel.send('idk what to help u with idiot');
+    } else if (command == 'fuck you'){
+        message.channel.send('no fuck you!');
     }
 });
 
