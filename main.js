@@ -30,7 +30,7 @@ client.on('message', message =>{
         //grab the "first" mentioned user from the message
         // this will retrun a 'user' object, just like 'message.author'
         const taggedUser = message.mentions.users.first();
-        message.channel.send(`<:twodudes1:765808737461207047> @${taggedUser.username} :twodudes2:`);
+        message.channel.send(`<:twodudes1:765817861175902208>@${taggedUser}<:twodudes2:765817874652594186>`);
         
     }
 });
