@@ -27,7 +27,10 @@ client.on('message', message =>{
         //grab the "first" mentioned user from the message
         // this will retrun a 'user' object, just like 'message.author'
         const taggedUser = message.mentions.users.first();
-        message.channel.send(':twodudes1: ${taggedUser.username} :twodudes2:');
+        message.channel.send(`:twodudes1: ${taggedUser.username} :twodudes2:`);
+        if (!message.mentions.users.size) {
+            return message.reply('you need to tag someone first!');
+        }
     }
 });
 
