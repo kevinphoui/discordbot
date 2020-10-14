@@ -25,11 +25,24 @@ client.on('message', message =>{
         message.channel.send('pong!'); 
     } 
 
+    //help
+    else if (command == 'help'){
+        message.channel.send('!commands for commands');
+    } 
+
+    //commands
+    else if (command == 'commands'){
+        message.channel.send('!ping for pong\n' +
+        '!twitch for cool streamer\n' +
+        '!fuck.you to fuck someone off\n' +
+        '!kiss to kiss someone');
+    }
     //twitch channel plug
     else if (command == 'twitch'){
         message.channel.send('https://www.twitch.tv/catblast');
     } 
 
+    //f u 
     else if (command == 'fuck.you'){
         //error
         if (!message.mentions.users.size) {
@@ -37,14 +50,15 @@ client.on('message', message =>{
         }
         //num generator for plot twist
         var randomNum = Math.random();
-        if (randomNum > 0.8){
+        if (randomNum < 0.8){
         message.channel.send(`Hey ${taggedUser}, fuck you!`);
         }
         else {
             message.channel.send(`You know what? fuck you instead ${taggedUser}!`);
         }
     } 
-
+    
+    //kiss 
     else if (command == 'kiss'){
         if (!message.mentions.users.size) {
             return message.reply('you need to tag someone first!');
@@ -52,16 +66,14 @@ client.on('message', message =>{
         message.channel.send(`<:twodudes1:765817861175902208>${taggedUser}<:twodudes2:765817874652594186>`);
     } 
 
-    else if (command == 'help'){
-        message.channel.send('!commands for commands');
-    } 
-
-    else if (command == 'commands'){
-        message.channel.send('!ping for pong.\n' +
-        '!twitch for cool streamer.\n' +
-        '!fuck.you to fuck someone off.\n' +
-        '!kiss to kiss someone.');
+    //warning
+    else if(command == 'warn'){
+        if (!message.mentions.users.size) {
+            return message.reply('???');
+        }
+        message.channel.send(`\:face_with_symbols_over_mouth: ${taggedUser}, you have been warned! :face_with_symbols_over_mouth:`)
     }
+    
     //error message
     else{
         message.channel.send('???');
