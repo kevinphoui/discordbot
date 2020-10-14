@@ -11,6 +11,10 @@ client.once('ready', () => {
 });
 
 client.on('message', message =>{
+
+    if(message== 'pog'){
+        message.channel.send('poggers');
+    }
     //ignore if no prefix
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
@@ -69,11 +73,16 @@ client.on('message', message =>{
     //warning
     else if(command == 'warn'){
         if (!message.mentions.users.size) {
-            return message.reply('???');
+            return message.reply('who???');
         }
-        message.channel.send(`:rage:  ${taggedUser}, you have been :warning: WARNED :warning:! :rage:`)
+        message.channel.send(`:rage:  ${taggedUser}, you have been :warning:WARNED:warning:! :rage:`)
     }
     
+
+
+
+
+
     //error message
     else{
         message.channel.send('???');
