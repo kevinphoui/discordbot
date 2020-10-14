@@ -24,13 +24,14 @@ client.on('message', message =>{
     } else if (command == 'fuck-you'){
         message.channel.send('no fuck you!');
     } else if (command == 'kiss'){
+        if (!message.mentions.users.size) {
+            return message.reply('you need to tag someone first!');
+        }
         //grab the "first" mentioned user from the message
         // this will retrun a 'user' object, just like 'message.author'
         const taggedUser = message.mentions.users.first();
         message.channel.send(`:twodudes1: ${taggedUser.username} :twodudes2:`);
-        if (!message.mentions.users.size) {
-            return message.reply('you need to tag someone first!');
-        }
+        
     }
 });
 
