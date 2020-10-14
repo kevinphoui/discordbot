@@ -20,7 +20,7 @@ client.on('message', message =>{
     } else if (command == 'twitch'){
         message.channel.send('https://www.twitch.tv/catblast');
     } else if (command == 'help'){
-        message.channel.send(user);
+        message.channel.send('idk what to help u with idiot');
     }
 });
 
