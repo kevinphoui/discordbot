@@ -34,32 +34,32 @@ client.on('message', message =>{
 
     //commands
     else if (command == 'commands'){
-        message.channel.send('!info to learn about this bot' +
-        '!update for the latest updates' + 
+        message.channel.send('!info to learn about this bot\n' +
+        '!update for the latest updates\n' + 
         '!hi to say hi\n' +
-        '!kiss to kiss someone' +
-        '!warn to send someone a useless warning');
+        '!kiss to kiss someone\n' +
+        '!warn to send someone a useless warning\n');
     }
 
     //info
     else if (command == 'info'){
         message.channel.send('This bot is a work in progress!\n' +
-        "Made in 10/13/2020" +
-        "Made by Kevin Phouisangiem" +
-        "Credit to CodeLyon for the online tutorials" +
-        "Credit to Heroku for hosting this bot" +
-        "Check out our GitHub: https://github.com/kevinpho970/discordbot");
+        "Made in 10/13/2020\n" +
+        "Made by Kevin Phouisangiem\n" +
+        "Credit to CodeLyon for the online tutorials\n" +
+        "Credit to Heroku for hosting this bot\n" +
+        "Check out our GitHub: https://github.com/kevinpho970/discordbot\n");
     } 
     
     else if (command == 'update'){
-        message.channel.send('10/15/20' +
-        'Removed !f u command' +
-        'Changed !ping pong command to hi hello' +
-        "Updated !commands" +
-        'Created !info command' +
-        'Created !update command' +
-        "Added todo comments" +
-        'Commented "pog" command out'
+        message.channel.send('10/15/20\n' +
+        'Removed !f u command\n' +
+        'Changed !ping pong command to hi hello\n' +
+        "Updated !commands\n" +
+        'Created !info command\n' +
+        'Created !update command\n' +
+        "Added todo comments\n" +
+        'Commented "pog" command out\n'
         );
     }
 
