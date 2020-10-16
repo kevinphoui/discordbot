@@ -12,56 +12,62 @@ client.once('ready', () => {
 
 client.on('message', message =>{
 
-    if(message== 'pog'){
+    /* to be fixed
+    if(message == 'pog'){
         message.channel.send('poggers');
-    }
+    } */
     //ignore if no prefix
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
+
     //grab the "first" mentioned user from the message
     // this will return a 'user' object, just like 'message.author'
     const taggedUser = message.mentions.users.first();
 
-    //pingpong
-    if(command === 'ping'){
-        message.channel.send('pong!'); 
-    } 
-
+    //this command may be redundant
     //help
-    else if (command == 'help'){
+    if (command == 'help'){
         message.channel.send('!commands for commands');
     } 
 
     //commands
     else if (command == 'commands'){
-        message.channel.send('!ping for pong\n' +
-        '!twitch for cool streamer\n' +
-        '!fuck.you to fuck someone off\n' +
-        '!kiss to kiss someone');
+        message.channel.send('!info to learn about this bot' +
+        '!update for the latest updates' + 
+        '!hi to say hi\n' +
+        '!kiss to kiss someone' +
+        '!warn to send someone a useless warning');
     }
-    //twitch channel plug
-    else if (command == 'twitch'){
-        message.channel.send('https://www.twitch.tv/catblast');
-    } 
 
-    //f u 
-    else if (command == 'fuck.you'){
-        //error
-        if (!message.mentions.users.size) {
-            return message.reply('you need to tag someone first!');
-        }
-        //num generator for plot twist
-        var randomNum = Math.random();
-        if (randomNum < 0.8){
-        message.channel.send(`Hey ${taggedUser}, fuck you!`);
-        }
-        else {
-            message.channel.send(`You know what? fuck you instead ${taggedUser}!`);
-        }
+    //info
+    else if (command == 'info'){
+        message.channel.send('This bot is a work in progress!\n' +
+        "Made in 10/13/2020" +
+        "Made by Kevin Phouisangiem" +
+        "Credit to CodeLyon for the online tutorials" +
+        "Credit to Heroku for hosting this bot" +
+        "Check out our GitHub: https://github.com/kevinpho970/discordbot");
     } 
     
+    else if (command == 'update'){
+        message.channel.send('10/15/20' +
+        'Removed !f u command' +
+        'Changed !ping pong command to hi hello' +
+        "Updated !commands" +
+        'Created !info command' +
+        'Created !update command' +
+        "Added todo comments" +
+        'Commented "pog" command out'
+        );
+    }
+
+    //hi
+    else if(command === 'hi'){
+        message.channel.send('hello'); 
+    }
+
     //kiss 
     else if (command == 'kiss'){
         if (!message.mentions.users.size) {
@@ -75,9 +81,19 @@ client.on('message', message =>{
         if (!message.mentions.users.size) {
             return message.reply('who???');
         }
-        message.channel.send(`:rage:  ${taggedUser}, you have been :warning:WARNED:warning:! :rage:`)
+        message.channel.send(`:rage:  ${taggedUser}, you have been :warning:WARNED:warning:!  :rage:`)
     }
     
+    //TODO
+    //Word counter??
+    //music bot??
+    //valorant stats??
+    //dice roll
+    //cool-o-meter
+    //spam detection
+    //uwuify
+    //birthday bot
+
 
 
 
