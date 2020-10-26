@@ -8,6 +8,8 @@ const prefix="!";
 
 client.once("ready", () => {
     console.log("kevin bot is online!");
+    const channel = guild.channels.find(ch => ch.name === "test");
+    channel.send("Kevin bot is now online!");
 });
 
 client.on("message", message =>{
