@@ -57,6 +57,7 @@ client.on("message", message =>{
     else if (command == "update"){
         message.channel.send("```Latest Update: 10/17/20\n" +
         "Modified warning message\n" +
+        "Added code blocks" +
         " ```"
         );
     }
