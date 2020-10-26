@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 const client = new Discord.Client();
 
-//call bot command
+// call bot command
 const prefix="!";
 
 
@@ -16,23 +16,23 @@ client.on("message", message =>{
     if(message == "pog"){
         message.channel.send("poggers");
     } */
-    //ignore if no prefix
+    // ignore if no prefix
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
-    //grab the "first" mentioned user from the message
+    // grab the "first" mentioned user from the message
     // this will return a "user" object, just like "message.author"
     const taggedUser = message.mentions.users.first();
 
-    //this command may be redundant
-    //help
+    // this command may be redundant
+    // !help
     if (command == "help"){
         message.channel.send("!commands for commands");
     } 
 
-    //commands
+    // !commands
     else if (command == "commands"){
         message.channel.send("!info to learn more about this bot\n" +
         "!update for the latest updates\n" + 
@@ -41,33 +41,33 @@ client.on("message", message =>{
         "!warn to send someone a useless warning\n");
     }
 
-    //info
+    // !info
     else if (command == "info"){
-        message.channel.send("```This is a relatively new bot!\n"+
-        "Currently a work in progress!\n" +
+        message.channel.send("```This is a new bot! Created in 10/13/2020\n"+
+        "Currently a work in progress\n" +
         "Made by Kevin Phouisangiem\n" +
-        "Created in 10/13/2020\n" +
         "Made with node.js and JavaScript" +
         "Credit to CodeLyon for the online tutorials\n" +
         "Credit to Heroku for hosting this bot\n" +
         "This bot's GitHub: https://github.com/kevinpho970/discordbot\n```");
     } 
     
-    //update
+    // !update
     else if (command == "update"){
-        message.channel.send("```Latest Update: 10/17/20\n" +
+        message.channel.send("```" +
+        "***Latest Update:*** 10/26/20\n" +
         "Modified warning message\n" +
         "Added code blocks" +
         " ```"
         );
     }
 
-    //hi
+    // !hi
     else if(command === "hi"){
         message.channel.send("hello"); 
     }
  
-    //kiss 
+    // !kiss 
     else if (command == "kiss"){
         if (!message.mentions.users.size) {
             return message.reply("you need to tag someone first!");
@@ -75,9 +75,9 @@ client.on("message", message =>{
         message.channel.send(`<:twodudes1:765817861175902208>${taggedUser}<:twodudes2:765817874652594186>`);
     } 
 
-    //warning
-    //TODO: only I can warn people
-    //TODO: add counter for warns per person
+    // !warning
+    // TODO: only let me warn people
+    // TODO: add counter for warns per person
     else if(command == "warn"){
         if (!message.mentions.users.size) {
             return message.reply("who???");
@@ -85,18 +85,33 @@ client.on("message", message =>{
         message.channel.send(`:rage:  ${taggedUser}, you have been WARNED!  :rage:`)
     }
     
+    // !die
+    // Rolls a 6 sided die!
+    else if (command == "die") {
+        // Rolls a random number from 0-6
+        var ranDie = Math.floor(Math.random() * Math.floor(7));
+        message.channel.send("You rolled a " + ranDie  + "!");
+    }
+
+    //!cool-o-meter
+    // Randomly generate the cool percentage for the user
+    // TODO: each user is stuck with their cool percentage
+    else if (command == "cool-meter"){
+        message.channel.send("You are " + Math.random() * 100 + "% cool!")
+    }
+
+
     //TODO
-    //add better text formatting
-    //Word counter??
-    //add counter for warnings per user
-    //dm users like sending warnings
-    //music bot??
-    //valorant stats??
-    //dice roll
-    //cool-o-meter
-    //spam detection
-    //uwuify
-    //birthday bot
+    //Word counter - hard
+    //add counter for warnings per user - hard
+    //dm users like sending warnings - easy? but i shouldn't spam users with warnings
+    //music bot?? -- medium
+    //valorant stats?? -- hard
+    //dice roll -- easy
+    //cool-o-meter -- easy
+    //spam detection -- hard?
+    //uwuify -- medium
+    //birthday bot -- hard
 
 
 
