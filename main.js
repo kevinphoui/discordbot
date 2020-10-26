@@ -29,11 +29,13 @@ client.on("message", message =>{
     // this command may be redundant
     // !help
     if (command == "help"){
+        console.log("!help used")
         message.channel.send("!commands for commands");
     } 
 
     // !commands
     else if (command == "commands"){
+        console.log("!commands used")
         message.channel.send("!info to learn more about this bot\n" +
         "!update for the latest updates\n" + 
         "!hi to say hi\n" +
@@ -43,6 +45,7 @@ client.on("message", message =>{
 
     // !info
     else if (command == "info"){
+        console.log("!info used")
         message.channel.send("```This is a new bot! Created in 10/13/2020\n"+
         "Currently a work in progress\n" +
         "Made by Kevin Phouisangiem\n" +
@@ -54,21 +57,26 @@ client.on("message", message =>{
     
     // !update
     else if (command == "update"){
+        console.log("!update used")
         message.channel.send("```" +
         "***Latest Update:*** 10/26/20\n" +
         "Modified warning message\n" +
         "Added code blocks" +
+        "Added !die" +
+        "Added !coolmeter" +
         " ```"
         );
     }
 
     // !hi
     else if(command === "hi"){
+        console.log("!hi used")
         message.channel.send("hello"); 
     }
  
     // !kiss 
     else if (command == "kiss"){
+        console.log("!kiss used")
         if (!message.mentions.users.size) {
             return message.reply("you need to tag someone first!");
         }
@@ -79,6 +87,7 @@ client.on("message", message =>{
     // TODO: only let me warn people
     // TODO: add counter for warns per person
     else if(command == "warn"){
+        console.log("!warm used")
         if (!message.mentions.users.size) {
             return message.reply("who???");
         }
@@ -88,6 +97,7 @@ client.on("message", message =>{
     // !die
     // Rolls a 6 sided die!
     else if (command == "die") {
+        console.log("!die used")
         // Rolls a random number from 0-6
         var ranDie = Math.floor(Math.random() * Math.floor(7));
         message.channel.send("You rolled a " + ranDie  + "!");
@@ -96,12 +106,14 @@ client.on("message", message =>{
     //!cool-o-meter
     // Randomly generate the cool percentage for the user
     // TODO: each user is stuck with their cool percentage
-    else if (command == "cool-meter"){
+    else if (command == "coolmeter"){
+        console.log("!coolmeter used")
         message.channel.send("You are " + Math.floor(Math.random() * 100) + "% cool!")
     }
 
 
     //TODO
+    //console.log ever action -- easy
     //Word counter - hard
     //add counter for warnings per user - hard
     //dm users like sending warnings - easy? but i shouldn't spam users with warnings
@@ -112,9 +124,6 @@ client.on("message", message =>{
     //spam detection -- hard?
     //uwuify -- medium
     //birthday bot -- hard
-
-
-
 
 
 
