@@ -97,7 +97,7 @@ client.on("message", message =>{
     // Randomly generate the cool percentage for the user
     // TODO: each user is stuck with their cool percentage
     else if (command == "cool-meter"){
-        message.channel.send("You are " + Math.random() * 100 + "% cool!")
+        message.channel.send("You are " + Math.floor(Math.random() * 100) + "% cool!")
     }
 
 
