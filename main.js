@@ -11,7 +11,7 @@ client.once("ready", () => {
     //TODO: sends msg to test channel that tells when bot is live again
     //const channel = guild.channels.find(ch => ch.name === "test")
     //channel.send("Kevin bot is now online!" + Date.now())
-});
+})
 
 client.on("message", message =>{
 
@@ -54,7 +54,8 @@ client.on("message", message =>{
     // !info
     else if (command == "info"){
         console.log("!info used")
-        message.channel.send("```This is a new bot! Created in 10/13/2020\n"+
+        message.channel.send("```" +
+        "This is a new bot! Created in 10/13/2020\n"+
         "Currently a work in progress\n" +
         "Made by Kevin Phouisangiem\n" +
         "Made with node.js and JavaScript" +
@@ -74,7 +75,7 @@ client.on("message", message =>{
         "Added !die\n" +
         "Added !cool-meter\n" +
         "```"
-        );
+        )
     }
 
     // !hi
@@ -101,7 +102,7 @@ client.on("message", message =>{
         console.log("!warm used")
 
         if (!message.mentions.users.size) {
-            return message.reply("who???");
+            return message.reply("who???")
         }
         message.channel.send(`:rage:  ${taggedUser}, you have been WARNED!  :rage:`)
     }
@@ -118,14 +119,15 @@ client.on("message", message =>{
 
     //!cool-o-meter
     // Randomly generate the cool percentage for the user
+    // A user can @ someone to see their cool-o-meter
     // TODO: each user is stuck with their cool percentage
     else if (command == "cool-meter"){
         console.log("!cool-meter used")
-        var cool = Math.floor(Math.random() * 100); 
+        var cool = Math.floor(Math.random() * 100)
         if (!message.mentions.users.size) {
             return message.reply("You are " + cool + "% cool!")
         }
-        message.channel.send(`${taggedUser} is` + cool + "% cool!")
+        message.channel.send(`${taggedUser} is ` + cool + "% cool!")
     }
 
 
@@ -148,7 +150,7 @@ client.on("message", message =>{
     else{
         message.channel.send("???")
     }
-});
+})
 
 
 client.login(process.env.token)
