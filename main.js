@@ -125,21 +125,19 @@ client.on("message", message =>{
         console.log("!cool-meter used")
         var cool = Math.floor(Math.random() * 100)
         if (!message.mentions.users.size) {
-            return message.reply("You are " + cool + "% cool!")
+            return message.reply("you are " + cool + "% cool!")
         }
         message.channel.send(`${taggedUser} is ` + cool + "% cool!")
     }
 
 
     //TODO
-    //console.log ever action -- easy
+    // messages in test channel when the bot is updated
     //Word counter - hard
     //add counter for warnings per user - hard
     //dm users like intro msgs - easy? but i shouldn't spam users with warnings
     //music bot?? -- medium
     //valorant stats?? -- hard
-    //dice roll -- easy
-    //cool-o-meter -- easy
     //spam detection -- hard?
     //uwuify -- medium
     //birthday bot -- hard
