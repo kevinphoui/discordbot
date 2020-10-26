@@ -8,8 +8,9 @@ const prefix="!";
 
 client.once("ready", () => {
     console.log("kevin bot is online!");
-    const channel = guild.channels.find(ch => ch.name === "test");
-    channel.send("Kevin bot is now online!");
+    //TODO: sends msg to test channel that tells when bot is live again
+    //const channel = guild.channels.find(ch => ch.name === "test");
+    //channel.send("Kevin bot is now online!" + Date.now());
 });
 
 client.on("message", message =>{
@@ -42,7 +43,10 @@ client.on("message", message =>{
         "!update for the latest updates\n" + 
         "!hi to say hi\n" +
         "!kiss to kiss someone\n" +
-        "!warn to send someone a useless warning\n");
+        "!warn to send someone a useless warning\n" +
+        "!die to roll a die\n" +
+        "!cool-meter to see how cool you are\n"
+        );
     }
 
     // !info
@@ -63,10 +67,10 @@ client.on("message", message =>{
         message.channel.send("```" +
         "Latest Update: 10/26/20\n" +
         "Modified warning message\n" +
-        "Added code blocks" +
-        "Added !die" +
-        "Added !cool-meter" +
-        " ```"
+        "Added code blocks\n" +
+        "Added !die\n" +
+        "Added !cool-meter\n" +
+        "```"
         );
     }
 
@@ -110,7 +114,7 @@ client.on("message", message =>{
     // TODO: each user is stuck with their cool percentage
     else if (command == "cool-meter"){
         console.log("!cool-meter used")
-        message.channel.send("You are " + Math.floor(Math.random() * 100) + "% cool!")
+        message.reply("You are " + Math.floor(Math.random() * 100) + "% cool!")
     }
 
 
