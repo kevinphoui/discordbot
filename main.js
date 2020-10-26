@@ -41,13 +41,16 @@ client.on("message", message =>{
     else if (command == "commands"){
         console.log("!commands used")
 
-        message.channel.send("!info to learn more about this bot\n" +
+        message.channel.send("```" +
+        "!info to learn more about this bot\n" +
         "!update for the latest updates\n" + 
         "!hi to say hi\n" +
         "!kiss to kiss someone\n" +
         "!warn to send someone a useless warning\n" +
         "!die to roll a die\n" +
-        "!cool-meter to see how cool you are\n"
+        "!coin to flip heads or tails\n" +
+        "!cool-meter to see how cool you are\n" +
+        "```"
         )
     }
 
@@ -61,7 +64,9 @@ client.on("message", message =>{
         "Made with node.js and JavaScript" +
         "Credit to CodeLyon for the online tutorials\n" +
         "Credit to Heroku for hosting this bot\n" +
-        "This bot's GitHub: https://github.com/kevinpho970/discordbot\n```")
+        "This bot's GitHub: https://github.com/kevinpho970/discordbot\n" +
+        "```"
+        )
     } 
     
     // !update
@@ -71,9 +76,11 @@ client.on("message", message =>{
         message.channel.send("```" +
         "Latest Update: 10/26/20\n" +
         "Modified warning message\n" +
+        "Fixed !kiss command\n" +
         "Added code blocks\n" +
         "Added !die\n" +
         "Added !cool-meter\n" +
+        "Added !coin\n" +
         "```"
         )
     }
@@ -92,7 +99,7 @@ client.on("message", message =>{
         if (!message.mentions.users.size) {
             return message.reply("you need to tag someone first!")
         }
-        message.channel.send(`<:twodudes1:765817861175902208>${taggedUser}<:twodudes2:765817874652594186>`)
+        message.channel.send(`<:twodudes1:768269580862095390>${taggedUser}<:twodudes2:765817874652594186>`)
     } 
 
     // !warning
@@ -117,6 +124,19 @@ client.on("message", message =>{
         message.channel.send("You rolled a " + ranDie  + "!")
     }
 
+    // !coin
+    // A coin flips heads or tails
+    else if(command =="coin"){
+        console.log("!coin used")
+
+        if (Math.random() > 0.5){
+            message.channel.send("Heads!")
+        }
+        else {
+            message.channel.send("Tails!")
+        }
+    }
+
     //!cool-o-meter
     // Randomly generate the cool percentage for the user
     // A user can @ someone to see their cool-o-meter
@@ -132,10 +152,11 @@ client.on("message", message =>{
 
 
     //TODO
+    // automatically warn people
     // messages in test channel when the bot is updated
     //Word counter - hard
     //add counter for warnings per user - hard
-    //dm users like intro msgs - easy? but i shouldn't spam users with warnings
+    //dm users like intro msgs - medium? but i shouldn't spam users with warnings
     //music bot?? -- medium
     //valorant stats?? -- hard
     //spam detection -- hard?
