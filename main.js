@@ -59,11 +59,11 @@ client.on("message", message =>{
     else if (command == "update"){
         console.log("!update used")
         message.channel.send("```" +
-        "***Latest Update:*** 10/26/20\n" +
+        "Latest Update: 10/26/20\n" +
         "Modified warning message\n" +
         "Added code blocks" +
         "Added !die" +
-        "Added !coolmeter" +
+        "Added !cool-meter" +
         " ```"
         );
     }
@@ -106,8 +106,8 @@ client.on("message", message =>{
     //!cool-o-meter
     // Randomly generate the cool percentage for the user
     // TODO: each user is stuck with their cool percentage
-    else if (command == "coolmeter"){
-        console.log("!coolmeter used")
+    else if (command == "cool-meter"){
+        console.log("!cool-meter used")
         message.channel.send("You are " + Math.floor(Math.random() * 100) + "% cool!")
     }
 
@@ -116,7 +116,7 @@ client.on("message", message =>{
     //console.log ever action -- easy
     //Word counter - hard
     //add counter for warnings per user - hard
-    //dm users like sending warnings - easy? but i shouldn't spam users with warnings
+    //dm users like intro msgs - easy? but i shouldn't spam users with warnings
     //music bot?? -- medium
     //valorant stats?? -- hard
     //dice roll -- easy
