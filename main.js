@@ -1,44 +1,46 @@
-const Discord = require("discord.js");
+const Discord = require("discord.js")
 
-const client = new Discord.Client();
+const client = new Discord.Client()
 
 // call bot command
-const prefix="!";
+const prefix="!"
 
 
 client.once("ready", () => {
-    console.log("kevin bot is online!");
+    console.log("kevin bot is online!")
     //TODO: sends msg to test channel that tells when bot is live again
-    //const channel = guild.channels.find(ch => ch.name === "test");
-    //channel.send("Kevin bot is now online!" + Date.now());
+    //const channel = guild.channels.find(ch => ch.name === "test")
+    //channel.send("Kevin bot is now online!" + Date.now())
 });
 
 client.on("message", message =>{
 
     /* to be fixed
     if(message == "pog"){
-        message.channel.send("poggers");
+        message.channel.send("poggers")
     } */
     // ignore if no prefix
-    if(!message.content.startsWith(prefix) || message.author.bot) return;
+    if(!message.content.startsWith(prefix) || message.author.bot) return
 
-    const args = message.content.slice(prefix.length).split(/ +/);
-    const command = args.shift().toLowerCase();
+    const args = message.content.slice(prefix.length).split(/ +/)
+    const command = args.shift().toLowerCase()
 
     // grab the "first" mentioned user from the message
     // this will return a "user" object, just like "message.author"
-    const taggedUser = message.mentions.users.first();
+    const taggedUser = message.mentions.users.first()
 
     // this command may be redundant
     // !help
     if (command == "help"){
         console.log("!help used")
-        message.channel.send("!commands for commands");
+
+        message.channel.send("!commands for commands")
     } 
 
     // !commands
     else if (command == "commands"){
         console.log("!commands used")
+
         message.channel.send("!info to learn more about this bot\n" +
         "!update for the latest updates\n" + 
         "!hi to say hi\n" +
@@ -46,7 +48,7 @@ client.on("message", message =>{
         "!warn to send someone a useless warning\n" +
         "!die to roll a die\n" +
         "!cool-meter to see how cool you are\n"
-        );
+        )
     }
 
     // !info
@@ -58,12 +60,13 @@ client.on("message", message =>{
         "Made with node.js and JavaScript" +
         "Credit to CodeLyon for the online tutorials\n" +
         "Credit to Heroku for hosting this bot\n" +
-        "This bot's GitHub: https://github.com/kevinpho970/discordbot\n```");
+        "This bot's GitHub: https://github.com/kevinpho970/discordbot\n```")
     } 
     
     // !update
     else if (command == "update"){
         console.log("!update used")
+
         message.channel.send("```" +
         "Latest Update: 10/26/20\n" +
         "Modified warning message\n" +
@@ -77,16 +80,18 @@ client.on("message", message =>{
     // !hi
     else if(command === "hi"){
         console.log("!hi used")
-        message.channel.send("hello"); 
+
+        message.channel.send("hello")
     }
  
     // !kiss 
     else if (command == "kiss"){
         console.log("!kiss used")
+
         if (!message.mentions.users.size) {
-            return message.reply("you need to tag someone first!");
+            return message.reply("you need to tag someone first!")
         }
-        message.channel.send(`<:twodudes1:765817861175902208>${taggedUser}<:twodudes2:765817874652594186>`);
+        message.channel.send(`<:twodudes1:765817861175902208>${taggedUser}<:twodudes2:765817874652594186>`)
     } 
 
     // !warning
@@ -94,6 +99,7 @@ client.on("message", message =>{
     // TODO: add counter for warns per person
     else if(command == "warn"){
         console.log("!warm used")
+
         if (!message.mentions.users.size) {
             return message.reply("who???");
         }
@@ -104,9 +110,10 @@ client.on("message", message =>{
     // Rolls a 6 sided die!
     else if (command == "die") {
         console.log("!die used")
+
         // Rolls a random number from 0-6
-        var ranDie = Math.floor(Math.random() * Math.floor(7));
-        message.channel.send("You rolled a " + ranDie  + "!");
+        var ranDie = Math.floor(Math.random() * Math.floor(7))
+        message.channel.send("You rolled a " + ranDie  + "!")
     }
 
     //!cool-o-meter
@@ -114,7 +121,11 @@ client.on("message", message =>{
     // TODO: each user is stuck with their cool percentage
     else if (command == "cool-meter"){
         console.log("!cool-meter used")
-        message.reply("You are " + Math.floor(Math.random() * 100) + "% cool!")
+        var cool = Math.floor(Math.random() * 100); 
+        if (!message.mentions.users.size) {
+            return message.reply("You are " + cool + "% cool!")
+        }
+        message.channel.send(`${taggedUser} is` + cool + "% cool!")
     }
 
 
@@ -135,9 +146,9 @@ client.on("message", message =>{
 
     //error message
     else{
-        message.channel.send("???");
+        message.channel.send("???")
     }
 });
 
 
-client.login(process.env.token);
+client.login(process.env.token)
