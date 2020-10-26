@@ -43,14 +43,14 @@ client.on("message", message =>{
 
     //info
     else if (command == "info"){
-        message.channel.send("This is a relatively new bot!\n"+
+        message.channel.send("```This is a relatively new bot!\n"+
         "Currently a work in progress!\n" +
         "Made by Kevin Phouisangiem\n" +
         "Created in 10/13/2020\n" +
         "Made with node.js and JavaScript" +
         "Credit to CodeLyon for the online tutorials\n" +
         "Credit to Heroku for hosting this bot\n" +
-        "This bot's GitHub: https://github.com/kevinpho970/discordbot\n");
+        "This bot's GitHub: https://github.com/kevinpho970/discordbot\n```");
     } 
     
     //update
