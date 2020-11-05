@@ -8,9 +8,9 @@ const prefix="!"
 
 client.once("ready", () => {
     console.log("kevin bot is online!")
-    //TODO: sends msg to test channel that tells when bot is live again
-    //const channel = guild.channels.find(ch => ch.name === "test")
-    //channel.send("Kevin bot is now online!" + Date.now())
+    // TODO: sends msg to test channel that tells when bot is live again
+    // const channel = guild.channels.find(ch => ch.name === "test")
+    // channel.send("Kevin bot is now online!" + Date.now())
 })
 
 client.on("message", message =>{
@@ -48,7 +48,7 @@ client.on("message", message =>{
         "!kiss to kiss someone\n" +
         "!warn to send someone a useless warning\n" +
         "!die to roll a die\n" +
-        "!coin to flip heads or tails\n" +
+        "!coin to flip a coin\n" +
         "!cool-meter to see how cool you are\n" +
         "```"
         )
@@ -61,7 +61,7 @@ client.on("message", message =>{
         "This is a new bot! Created in 10/13/2020\n"+
         "Currently a work in progress\n" +
         "Made by Kevin Phouisangiem\n" +
-        "Made with node.js and JavaScript" +
+        "Made with node.js and JavaScript\n" +
         "Credit to CodeLyon for the online tutorials\n" +
         "Credit to Heroku for hosting this bot\n" +
         "This bot's GitHub: https://github.com/kevinpho970/discordbot\n" +
@@ -74,13 +74,10 @@ client.on("message", message =>{
         console.log("!update used")
 
         message.channel.send("```" +
-        "Latest Update: 10/26/20\n" +
-        "Modified warning message\n" +
-        "Fixed !kiss command\n" +
-        "Added code blocks\n" +
-        "Added !die\n" +
-        "Added !cool-meter\n" +
-        "Added !coin\n" +
+        "Latest Update: 10/27/20\n" +
+        "Fixed text layout for !info\n" +
+        "Added a rare outcome for !coin\n" +
+        "Adjusted wording for !commands\n" +
         "```"
         )
     }
@@ -126,10 +123,14 @@ client.on("message", message =>{
 
     // !coin
     // A coin flips heads or tails
+    // 1% chance to land on its side
     else if(command =="coin"){
         console.log("!coin used")
 
-        if (Math.random() > 0.5){
+        if (Math.random() < 0.01) {
+            message.channel.send("Woah! The coin landed on its side!")
+        }
+        else if (Math.random() > 0.5){
             message.channel.send("Heads!")
         }
         else {
@@ -152,6 +153,7 @@ client.on("message", message =>{
 
 
     //TODO
+    // add .5 second wait? to stop bot messages sending before user -- easy
     // automatically warn people
     // messages in test channel when the bot is updated
     //Word counter - hard
@@ -162,7 +164,6 @@ client.on("message", message =>{
     //spam detection -- hard?
     //uwuify -- medium
     //birthday bot -- hard
-
 
 
     //error message
