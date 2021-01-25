@@ -5,6 +5,12 @@ const client = new Discord.Client()
 // call bot command
 const prefix="!"
 
+function hi(){
+    console.log("!hi used")
+
+    message.channel.send("hello")
+}
+
 
 client.once("ready", () => {
     console.log("kevin bot is online!")
@@ -45,7 +51,7 @@ client.on("message", message =>{
         "!info to learn more about this bot\n" +
         "!update for the latest updates\n" + 
         "!hi to say hi\n" +
-        "!kiss to kiss someone\n" +
+        "!kiss to kiss someone \n" +
         "!warn to send someone a useless warning\n" +
         "!die to roll a die\n" +
         "!coin to flip a coin\n" +
@@ -74,19 +80,19 @@ client.on("message", message =>{
         console.log("!update used")
 
         message.channel.send("```" +
-        "Latest Update: 10/27/20\n" +
-        "Fixed text layout for !info\n" +
-        "Added a rare outcome for !coin\n" +
-        "Adjusted wording for !commands\n" +
+        "Latest Update: 1/24/21\n" +
+        "Testing...\n" +
+        //"\n" +
         "```"
         )
     }
 
     // !hi
     else if(command === "hi"){
-        console.log("!hi used")
+        hi()
+        //console.log("!hi used")
 
-        message.channel.send("hello")
+        //message.channel.send("hello")
     }
  
     // !kiss 
