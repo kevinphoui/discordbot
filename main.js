@@ -1,6 +1,7 @@
 const Discord = require("discord.js")
 const client = new Discord.Client()
 
+
 // Prefix to call the bot
 const prefix="!"
 
@@ -101,13 +102,13 @@ client.on("message", message =>{
         // 1% chance to land on its side
         console.log("!coin used")
         if (Math.random() < 0.01) {
-            message.channel.send("Woah! The coin landed on its side!")
+            message.channel.send("Woah! The coin landed on its side! My wife left me!")
         }
         else if (Math.random() > 0.5){
-            message.channel.send("Heads!")
+            message.channel.send("The coin landed on heads!")
         }
         else {
-            message.channel.send("Tails!")
+            message.channel.send("The coin landed on tails!")
         }
     }
     function cool(){
@@ -148,9 +149,9 @@ client.on("message", message =>{
     else if (command == "cool-meter"){cool()}
 
     /*TODO
+    Message me once the bot is back online -- easy?
     add .1 second wait? to stop bot messages sending before user -- easy
     automatically warn people
-    messages in test channel when the bot is updated
     Word counter - hard
     add counter for warnings per user - hard
     dm users like intro msgs - medium? but i shouldn't spam users with warnings
