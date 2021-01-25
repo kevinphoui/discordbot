@@ -61,9 +61,9 @@ client.on("message", message =>{
         // Prints update log
         console.log("!update used")
         message.channel.send("```" +
-            "Latest Update: 1/24/21\n" +
+            "Latest Update: 1/25/21\n" +
             "Cleaned up code\n" +
-            //"\n" +
+            "User cannot roll a zero on a die anymore\n" +
             "```"
         );
     }
@@ -92,9 +92,9 @@ client.on("message", message =>{
     }
     function die(){
         // Rolls a 6 sided die!
-        // Rolls a random number from 0-6
+        // Rolls a random number from 1-6
         console.log("!die used")
-        var ranDie = Math.floor(Math.random() * Math.floor(7))
+        var ranDie = Math.floor(Math.random() * Math.floor(6))+1
         message.channel.send("You rolled a " + ranDie  + "!")
     }
     function coin(){
