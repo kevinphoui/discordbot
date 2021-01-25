@@ -5,12 +5,6 @@ const client = new Discord.Client()
 // call bot command
 const prefix="!"
 
-function hi(){
-    console.log("!hi used")
-
-    message.channel.send("hello")
-}
-
 
 client.once("ready", () => {
     console.log("kevin bot is online!")
@@ -34,6 +28,14 @@ client.on("message", message =>{
     // grab the "first" mentioned user from the message
     // this will return a "user" object, just like "message.author"
     const taggedUser = message.mentions.users.first()
+
+    // Command Functions
+    function hi(){
+        console.log("!hi used")
+    
+        message.channel.send("hello")
+    }
+
 
     // this command may be redundant
     // !help
