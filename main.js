@@ -61,9 +61,8 @@ client.on("message", message =>{
         // Prints update log
         console.log("!update used")
         message.channel.send("```" +
-            "Latest Update: 1/25/21\n" +
-            "Cleaned up code\n" +
-            "User cannot roll a zero on a die anymore\n" +
+            "Latest Update: 1/26/21\n" +
+            "Bot will not respond to !ftn commands\n" +
             "```"
         );
     }
