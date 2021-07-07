@@ -6,7 +6,7 @@ const client = new Discord.Client();
 const prefix="!";
 
 // Logs once bot is back online
-client.once("ready", () => "message", message => {
+client.once("ready", () => {
     console.log("kevin bot is online!");
     const owner = message.client.users.cache.get("211241232737894400");
     owner.send("i'm awake!");
@@ -15,7 +15,7 @@ client.once("ready", () => "message", message => {
 
 client.on("message", message => {
     //to be fixed
-    if (!message.content == "pog"){
+    if (message.content == "pog"){
         message.channel.send("poggers");
     }
 
