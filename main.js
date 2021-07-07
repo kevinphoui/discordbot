@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const owner = message.client.users.cache.get("211241232737894400");
+
 
 // Prefix to call the bot
 const prefix="!";
@@ -8,13 +8,15 @@ const prefix="!";
 // Logs once bot is back online
 client.once("ready", () => {
     console.log("kevin bot is online!");
-    owner.send("hi2");
+    
 });
 
 
 client.on("message", message => {
     //to be fixed
     //message.send(`${owner} hi`);
+    const owner = message.client.users.cache.get("211241232737894400");
+    owner.send("hi2");
     if (!message.content == "pog"){
         message.channel.send("poggers");
     }
