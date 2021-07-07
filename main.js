@@ -17,7 +17,7 @@ client.on("message", message =>{
         message.channel.send("poggers")
     } */
     // ignore if no prefix
-    if(!message.content.startsWith(prefix) || message.content.startsWith('!ftn') || message.author.bot) return
+    if(!message.content.startsWith(prefix) || message.author.bot) return
 
     const args = message.content.slice(prefix.length).split(/ +/)
     const command = args.shift().toLowerCase()
@@ -61,8 +61,8 @@ client.on("message", message =>{
         // Prints update log
         console.log("!update used")
         message.channel.send("```" +
-            "Latest Update: 1/26/21\n" +
-            "Bot will not respond to !ftn commands\n" +
+            "Last Update: 7/06/21\n" +
+            "Bot will not respond to unknown commands\n" +
             "```"
         );
     }
@@ -160,11 +160,6 @@ client.on("message", message =>{
     uwuify -- medium
     birthday bot -- hard
     */
-
-    //error message
-    else{
-        message.channel.send("???")
-    }
 })
 
 
