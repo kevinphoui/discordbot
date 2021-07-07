@@ -116,13 +116,18 @@ client.on("message", message =>{
         var coolPercentage = Math.floor(Math.random() * 100)
         if (!message.mentions.users.size) {
             if (coolPercentage <= 30) {
-                return message.reply("you are " + coolPercentage + "% cool. loser.")
+                return message.reply("you are " + coolPercentage + "% cool. L<:OMEGALUL:862175661211516929>OSER")
             }
             else {
                 return message.reply("you are " + coolPercentage + "% cool!")
             }
         }
-        message.channel.send(`${taggedUser} is ` + coolPercentage + "% cool!")
+        if (coolPercentage <= 30) {
+            return message.channel.send(`${taggedUser} is ` + coolPercentage + '% cool! L<:OMEGALUL:862175661211516929>OSER')
+        }
+        else {
+            return message.channel.send(`${taggedUser} is ` + coolPercentage + "% cool!")
+        }
     }
     // Function calls---------------------------
     // !help
