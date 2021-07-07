@@ -9,7 +9,7 @@ const prefix="!";
 client.once("ready", () => "message", message => {
     console.log("kevin bot is online!");
     const owner = message.client.users.cache.get("211241232737894400");
-    owner.send("hi2");
+    owner.send("i'm awake!");
 });
 
 
