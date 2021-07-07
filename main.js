@@ -14,7 +14,7 @@ client.once("ready", () => {
 
 client.on("message", message => {
     //to be fixed
-    message.send(`${owner} hi`);
+    //message.send(`${owner} hi`);
     if (!message.content == "pog"){
         message.channel.send("poggers");
     }
