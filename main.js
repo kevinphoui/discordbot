@@ -8,7 +8,7 @@ const prefix="!";
 // Logs once bot is back online
 client.once("ready", () => {
     console.log("kevin bot is online!");
-    
+    owner.send("hi2");
 });
 
 
