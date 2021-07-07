@@ -8,6 +8,7 @@ const prefix="!"
 // Logs once bot is back online
 client.once("ready", () => {
     console.log("kevin bot is online!")
+    //message.send:211241232737894400("hi")
 })
 
 
@@ -122,11 +123,13 @@ client.on("message", message =>{
                 return message.reply("you are " + coolPercentage + "% cool!")
             }
         }
-        if (coolPercentage <= 30) {
-            return message.channel.send(`${taggedUser} is ` + coolPercentage + '% cool! L<:OMEGALUL:862175661211516929>OSER')
-        }
-        else {
-            return message.channel.send(`${taggedUser} is ` + coolPercentage + "% cool!")
+        if (message.mentions.users.size){
+            if (coolPercentage <= 30) {
+                return message.channel.send(`${taggedUser} is ` + coolPercentage + '% cool! L<:OMEGALUL:862175661211516929>OSER')
+            }
+            else {
+                return message.channel.send(`${taggedUser} is ` + coolPercentage + "% cool!")
+            }
         }
     }
     // Function calls---------------------------
