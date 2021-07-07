@@ -32,7 +32,7 @@ client.on("message", message =>{
         console.log("!commands used")
         message.channel.send("```" +
         "!info to learn more about this bot\n" +
-        "!update for the latest updates\n" + 
+        "!update for the latest updates\n" +
         "!hi to say hi\n" +
         "!kiss to kiss someone \n" +
         "!warn to send someone a useless warning\n" +
@@ -127,17 +127,17 @@ client.on("message", message =>{
         // this command may be redundant
         console.log("!help used")
         commands()
-    } 
+    }
     // !commands
     else if (command == "commands"){commands()}
     // !info
-    else if (command == "info"){info()} 
+    else if (command == "info"){info()}
     // !update
     else if (command == "update"){update()}
     // !hi
     else if(command === "hi"){hi()}
-    // !kiss 
-    else if (command == "kiss"){kiss()} 
+    // !kiss
+    else if (command == "kiss"){kiss()}
     // !warning
     else if(command == "warn"){warn()}
     // !die
