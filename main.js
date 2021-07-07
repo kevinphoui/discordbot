@@ -12,10 +12,10 @@ client.once("ready", () => {
 
 
 client.on("message", message =>{
-    /* to be fixed
-    if(message == "pog"){
+    //to be fixed
+    if(!message.content == "pog"){
         message.channel.send("poggers")
-    } */
+    }
     // ignore if no prefix
     if(!message.content.startsWith(prefix) || message.author.bot) return
 
@@ -53,7 +53,7 @@ client.on("message", message =>{
             "Made with node.js and JavaScript\n" +
             "Credit to CodeLyon for the online tutorials\n" +
             "Credit to Heroku for hosting this bot\n" +
-            "This bot's GitHub: https://github.com/kevinpho970/discordbot\n" +
+            "This bot's GitHub: https://github.com/kevinphoui/discordbot\n" +
             "```"
         );
     }
