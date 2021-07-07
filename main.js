@@ -38,7 +38,7 @@ client.on("message", message =>{
         "!warn to send someone a useless warning\n" +
         "!die to roll a die\n" +
         "!coin to flip a coin\n" +
-        "!cool-meter to see how cool you are\n" +
+        "!cool-meter to see how cool you are (you can @ someone)\n" +
         "```"
         )
     }
@@ -47,13 +47,12 @@ client.on("message", message =>{
         console.log("!info used")
         message.channel.send(
             "```" +
-            "This is a new bot! Created in 10/13/2020\n"+
-            "Currently a work in progress\n" +
+            "Work in progress | Created in 10/13/2020\n"+
             "Made by Kevin P.\n" +
             "Made with node.js and JavaScript\n" +
+            "Hosted on Heroku\n" +
             "Credit to CodeLyon for the online tutorials\n" +
-            "Credit to Heroku for hosting this bot\n" +
-            "This bot's GitHub: https://github.com/kevinphoui/discordbot\n" +
+            "GitHub page: https://github.com/kevinphoui/discordbot\n" +
             "```"
         );
     }
@@ -79,7 +78,6 @@ client.on("message", message =>{
 
     }
     function warn(){
-        // TODO: only let me warn people?
         // TODO: add counter for warns per person
         console.log("!warm used")
 
@@ -93,7 +91,7 @@ client.on("message", message =>{
         // Rolls a 6 sided die!
         // Rolls a random number from 1-6
         console.log("!die used")
-        var ranDie = Math.floor(Math.random() * Math.floor(6))+1
+        var ranDie = Math.floor(Math.random() * Math.floor(6)) + 1
         message.channel.send("You rolled a " + ranDie  + "!")
     }
     function coin(){
@@ -115,11 +113,16 @@ client.on("message", message =>{
         // A user can @ someone to see their cool-o-meter
         // TODO: each user is stuck with their cool percentage
         console.log("!cool-meter used")
-        var cool = Math.floor(Math.random() * 100)
+        var coolPercentage = Math.floor(Math.random() * 100)
         if (!message.mentions.users.size) {
-            return message.reply("you are " + cool + "% cool!")
+            if (coolPercentage <= 30) {
+                return message.reply("you are " + coolPercentage + "% cool. loser.")
+            }
+            else {
+                return message.reply("you are " + coolPercentage + "% cool!")
+            }
         }
-        message.channel.send(`${taggedUser} is ` + cool + "% cool!")
+        message.channel.send(`${taggedUser} is ` + coolPercentage + "% cool!")
     }
     // Function calls---------------------------
     // !help
